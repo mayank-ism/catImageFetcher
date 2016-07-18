@@ -36,3 +36,5 @@ npm start
 on your terminal. The application has started.
 
 Visit http://127.0.0.1:8080/ to see the gallery of cats!
+Live on: http://ec2-52-66-88-135.ap-south-1.compute.amazonaws.com:8080/
+
