@@ -1,0 +1,4 @@
+config/config.js
+log
+node_modules
+newrelic_agent.log
