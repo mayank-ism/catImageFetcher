@@ -1,0 +1,12 @@
+exports.port = process.env.PORT || 8080;
+exports.apiKey= "";
+exports.url = "https://api.gettyimages.com/v3/search/images?"
+exports.pageSize = 12;
+
+exports.newrelic = {
+	appName: 'catImageFetcher',
+	key: ''
+};
+
+exports.log_path = './log/catImg/';
+exports.sentryDsn = '';
