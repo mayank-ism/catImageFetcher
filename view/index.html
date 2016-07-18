@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- including necessary files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/ng-infinite-scroll.js"></script>
+    <script src="js/services/service.js"></script>
+    <script src="js/controllers/controllers.js"></script> 
+    <script src="js/core.js"></script>
+    <title>Cat Photos</title>
+  </head>
+
+  <body ng-app = "catImageFetcher">
+    <div class = "row">
+      <h4 class="text-center">
+        Cat Gallery
+      </h4>
+    </div>
+    <hr />
+    <div ng-controller = "imageController">
+      <div infinite-scroll = "getMoreData()">
+        <div ng-repeat = "url in imageURLs" ng-if="$index % 3 == 0" class="row">
+          <div class="row">
+            <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4">
+              <img ng-src="{{imageURLs[$index]}}" />
+            </div>
+            <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4" ng-if="imageURLs.length > ($index + 1)">
+              <img ng-src="{{imageURLs[$index + 1]}}" />
+            </div>
+            <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4" ng-if="imageURLs.length > ($index + 2)">
+              <img ng-src="{{imageURLs[$index+2]}}" />
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
